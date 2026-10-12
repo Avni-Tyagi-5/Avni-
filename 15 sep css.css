@@ -1,0 +1,38 @@
+/* Select the h1 heading*/
+h1 {
+    /* Change the heding color to blue */
+    color: blue;
+    
+}
+p{
+    /* Change the paragraph color to red */
+    color: red;
+}
+body{
+    /* Change the background color to lightblue */
+    background-color: lightblue;
+}
+body{/*Adds an image as background to the webpage*/
+    background-image: url("img.jpg");
+    /*Makes the background image cover the entire webpage*/
+    background-size: cover;
+    /* Stops the image from repeating*/
+    background-repeat: no-repeat;
+    /*Places the image in the center of the webpage*/
+    background-position: center;
+}
+h1 {
+    color: rgb(255, 0, 0);
+}
+p{
+    color: rgb(0, 0, 255);
+}
+h1 {
+    color: hsl(0, 100%, 50%);
+}
+h1 {
+    color: #00ff00;
+}
+h2 {
+    color: hsl(10, 50%, 75%);
+}

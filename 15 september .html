@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KIET Group of Institutions | University</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            width: 46px;
+            height: 46px;
+            background: linear-gradient(135deg, #123b82, #1c63c7);
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 19px;
+        }
+
+        .logo-text h2 {
+            color: #123b82;
+            font-size: 20px;
+        }
+
+        .logo-text p {
+            font-size: 10px;
+            color: #777;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #30394a;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #1b62c5;
+        }
+
+        .apply-btn {
+            background: #f58220;
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 8px;
+        }
+
+        .apply-btn:hover {
+            background: #d96c0e;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================== */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,25,61,0.94),
+                    rgba(5,35,80,0.78),
+                    rgba(5,35,80,0.30)
+                ),
+                url("https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1800&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.14);
+            border: 1px solid rgba(255,255,255,0.25);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #ff9a42;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #e1e8f3;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #f58220;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #ff963e;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #123b82;
+        }
+
+
+        /* =========================
+           STATS
+        ========================== */
+
+        .stats {
+            max-width: 1050px;
+            margin: -55px auto 0;
+            position: relative;
+            z-index: 5;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            padding: 28px;
+        }
+
+        .stat {
+            text-align: center;
+            border-right: 1px solid #e6e9ef;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h2 {
+            color: #123b82;
+            font-size: 30px;
+        }
+
+        .stat p {
+            color: #697386;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================== */
+
+        section {
+            padding: 90px 20px;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title small {
+            color: #f58220;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin: 8px 0;
+            color: #142b52;
+        }
+
+        .section-title p {
+            color: #687386;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 430px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-card {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .image-card strong {
+            color: #123b82;
+            font-size: 20px;
+        }
+
+        .about-content h2 {
+            font-size: 38px;
+            color: #142b52;
+            margin-bottom: 18px;
+        }
+
+        .about-content p {
+            color: #667085;
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .check-list li {
+            margin: 13px 0;
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            background: #eaf3ff;
+            color: #1764c0;
+            border-radius: 50%;
+            padding: 4px 7px;
+            margin-right: 10px;
+        }
+
+
+        /* =========================
+           PROGRAMS
+        ========================== */
+
+        .programs {
+            background: #eef4fb;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 22px;
+        }
+
+        .program-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e5eaf1;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(22,70,130,0.12);
+        }
+
+        .program-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #e9f2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .program-card h3 {
+            color: #173d78;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            color: #70798a;
+            font-size: 14px;
+        }
+
+        .program-card a {
+            display: inline-block;
+            margin-top: 18px;
+            color: #f58220;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CAMPUS FEATURES
+        ========================== */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            padding: 28px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        .feature-card .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #173d78;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           NOTICE + EVENTS
+        ========================== */
+
+        .notice-section {
+            background: #f1f5fa;
+        }
+
+        .notice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .notice-box {
+            background: white;
+            border-radius: 15px;
+            padding: 28px;
+        }
+
+        .notice-box h3 {
+            color: #173d78;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            display: flex;
+            gap: 15px;
+            padding: 16px 0;
+            border-bottom: 1px solid #e8ebf0;
+        }
+
+        .date {
+            min-width: 55px;
+            height: 55px;
+            background: #eaf3ff;
+            border-radius: 9px;
+            text-align: center;
+            padding-top: 7px;
+            color: #175db1;
+            font-weight: 800;
+        }
+
+        .notice h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .notice p {
+            font-size: 12px;
+            color: #777;
+        }
+
+
+        /* =========================
+           ADMISSION CTA
+        ========================== */
+
+        .cta {
+            background:
+                linear-gradient(120deg,#123b82,#195caf);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #dce8fa;
+            max-width: 650px;
+            margin: auto auto 25px;
+        }
+
+
+        /* =========================
+           MAP + CONTACT
+        ========================== */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 30px;
+        }
+
+        .contact-info {
+            background: #123b82;
+            color: white;
+            border-radius: 15px;
+            padding: 35px;
+        }
+
+        .contact-info h2 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #dce6f5;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            margin: 22px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            margin-bottom: 4px;
+        }
